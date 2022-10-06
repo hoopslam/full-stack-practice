@@ -4,6 +4,7 @@ import Clients from "./components/Clients";
 import { cache } from "./gql/cache";
 import { useState } from "react";
 import AddClientModal from "./components/AddClientModal";
+import Projects from "./components/Projects";
 
 const client = new ApolloClient({
   uri: `http://localhost:4000/graphql`,
@@ -21,6 +22,7 @@ function App() {
           <Clients />
           <button onClick={() => setActive(true)}>Add New Client</button>
           <AddClientModal active={active} closeModal={() => setActive(false)} />
+          <Projects />
         </div>
       </ApolloProvider>
     </>
